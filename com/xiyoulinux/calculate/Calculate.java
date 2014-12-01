@@ -1,3 +1,4 @@
+//æµ‹è¯•
 package com.xiyoulinux.calculate;
 
 import java.io.BufferedReader;
@@ -33,7 +34,7 @@ public class Calculate {
         mathFunction.add("sum");
     }
 
-    //	ÓÃ»§ÊäÈë¼ÆËãµÄÊıÑ§±í´ïÊ½
+    //	ç”¨æˆ·è¾“å…¥è®¡ç®—çš„æ•°å­¦è¡¨è¾¾å¼
     public void input() {
         System.out.print(">>");
         Scanner input = new Scanner(System.in);
@@ -44,37 +45,37 @@ public class Calculate {
         input.close();
     }
 
-    //	¼ì²éÊäÈëµÄÊıÑ§±í´ïÊ½ÊÇ·ñÓĞ´í
+    //	æ£€æŸ¥è¾“å…¥çš„æ•°å­¦è¡¨è¾¾å¼æ˜¯å¦æœ‰é”™
     public boolean checkError() {
         return false;
     }
 
-    //	°ÑÔ­Ê¼Êı¾İÖĞµÄÇóºÍ£¬Æ½¾ùÊıµÈ´¦Àí³ÉÊıÑ§Ê½×Ó¡£²¢ÇÒÊäÈë²»¹æ·¶µÄ¸Ä³É¹æ·¶µÄ£¨ÀıÈç¡°.7¡±¸ÄÎª¡°0.7¡±£©
+    //	æŠŠåŸå§‹æ•°æ®ä¸­çš„æ±‚å’Œï¼Œå¹³å‡æ•°ç­‰å¤„ç†æˆæ•°å­¦å¼å­ã€‚å¹¶ä¸”è¾“å…¥ä¸è§„èŒƒçš„æ”¹æˆè§„èŒƒçš„ï¼ˆä¾‹å¦‚â€œ.7â€æ”¹ä¸ºâ€œ0.7â€ï¼‰
     public List<String> toNormalExpression() {
         return null;
     }
 
-    //	Éú³ÉĞÂµÄÒ»¸öList·µ»ØÄæ²¨À¼±í´ïÊ½
+    //	ç”Ÿæˆæ–°çš„ä¸€ä¸ªListè¿”å›é€†æ³¢å…°è¡¨è¾¾å¼
     public List<String> toSuffixExpression(List<String> normalExpression) {
         getPriority("D:/priority.txt");
         return null;
     }
 
-    //	¸ù¾İ¸ø¶¨µÄÄæ²¨À¼±í´ïÊ½£¬¼ÆËã³ö×îÖÕ½á¹û
+    //	æ ¹æ®ç»™å®šçš„é€†æ³¢å…°è¡¨è¾¾å¼ï¼Œè®¡ç®—å‡ºæœ€ç»ˆç»“æœ
     public String calculate(List<String> suffixExpression) {
         return null;
     }
 
-    //	´ÓÎÄ¼şÖĞ»ñÈ¡ÔËËã·ûµÄÓÅÏÈ¼¶
+    //	ä»æ–‡ä»¶ä¸­è·å–è¿ç®—ç¬¦çš„ä¼˜å…ˆçº§
     private void getPriority(String filePath) {
         priority = new HashMap<String, Integer>();
         try {
             BufferedReader priorityFile = new BufferedReader(new FileReader(filePath));
             String EveryLineStr;
 
-            //¶ÁÈ¡Ã¿Ò»ĞĞ
+            //è¯»å–æ¯ä¸€è¡Œ
             while ((EveryLineStr = priorityFile.readLine()) != null) {
-                String [] operatorAndPriority = EveryLineStr.split(" ");//È¡µÃ¿Õ¸ñÇ°ºóµÄÖµ
+                String [] operatorAndPriority = EveryLineStr.split(" ");//å–å¾—ç©ºæ ¼å‰åçš„å€¼
                 priority.put(operatorAndPriority[0], Integer.valueOf(operatorAndPriority[1]));
 				/*System.out.println(operatorAndPriority[0] + Integer.valueOf(operatorAndPriority[1]));*/
             }
@@ -84,7 +85,7 @@ public class Calculate {
         }
     }
 
-    private String originalExpression;//Ô­Ê¼ÓÃ»§ÊäÈëµÄ±í´ïÊ½
-    private Map<String,Integer> priority;//ÔËËã·ûÓÅÏÈ¼¶£¬Êı×ÖÔ½Ğ¡ÓÅÏÈ¼¶Ô½¸ß£¬Áã´ú±íÓÅÏÈ¼¶×î¸ß
-    private Set<String> mathFunction;//´æ´¢ÊıÑ§º¯Êı
+    private String originalExpression;//åŸå§‹ç”¨æˆ·è¾“å…¥çš„è¡¨è¾¾å¼
+    private Map<String,Integer> priority;//è¿ç®—ç¬¦ä¼˜å…ˆçº§ï¼Œæ•°å­—è¶Šå°ä¼˜å…ˆçº§è¶Šé«˜ï¼Œé›¶ä»£è¡¨ä¼˜å…ˆçº§æœ€é«˜
+    private Set<String> mathFunction;//å­˜å‚¨æ•°å­¦å‡½æ•°
 }
